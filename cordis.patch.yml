@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-webmate
+      name: dsh-webmate
+      config: {}

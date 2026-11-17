@@ -1,0 +1,27 @@
+{
+  "name": "dsh-webmate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Read and operate signed-in sidebar webpages in DSH Desktop.",
+  "scripts": {
+    "test": "node --test reader.test.mjs",
+    "check": "node --check host.js && node --check browser.js && node --check broker.js"
+  },
+  "exports": {
+    ".": "./host.js",
+    "./client": "./browser.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["host.js", "browser.js", "broker.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md"],
+  "engines": { "dsh": "0.2.2-rc.3", "node": ">=24.9.0" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-connection", "@deepseek-ai/dsh-client-ui-sidebar-browser", "@deepseek-ai/dsh-client-ui-session"]
+    }
+  }
+}
