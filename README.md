@@ -9,10 +9,10 @@
 需要 **DSH Desktop 0.2.2-rc.3** 和可用的 Git。先启动一次 Desktop 完成初始化，再**完全退出 Desktop（包括托盘）**，在终端运行：
 
 ```sh
-dsh plugin --profile desktop add "github:YOUR_GITHUB_USERNAME/dsh-webmate#main"
+dsh plugin --profile desktop add "github:jozhn/dsh-webmate#main"
 ```
 
-将 `YOUR_GITHUB_USERNAME` 替换为仓库所有者的 GitHub 用户名或组织名。安装后重新打开 DSH Desktop，在插件列表确认 **dsh-webmate** 已启用。
+安装后重新打开 DSH Desktop，在插件列表确认 **dsh-webmate** 已启用。
 
 如果已经安装过旧实验包 `@local/dsh-sidebar-browser-tools`，请先卸载旧包再安装本包，避免重复注册同名工具。
 
@@ -20,14 +20,14 @@ dsh plugin --profile desktop add "github:YOUR_GITHUB_USERNAME/dsh-webmate#main"
 
 也可以在 DSH 的 **插件 → 添加插件** 中填写同一 GitHub 安装地址，或直接让具备插件管理工具的助手安装它。这种方式可由运行中的 Desktop 管理插件，无需手动关闭应用。
 
-> 当前仓库尚未绑定 GitHub 远端，文档中的用户名是占位符。上传仓库后应将此处命令替换为真实地址。命令语法已按当前 Desktop CLI 核实；远程下载需要对应仓库已存在且可访问。
+仓库地址：[jozhn/dsh-webmate](https://github.com/jozhn/dsh-webmate)。
 
 ### 安装指定版本
 
 仓库发布 `v1.0.0` 标签后，可以固定版本：
 
 ```sh
-dsh plugin --profile desktop add "github:YOUR_GITHUB_USERNAME/dsh-webmate#v1.0.0"
+dsh plugin --profile desktop add "github:jozhn/dsh-webmate#v1.0.0"
 ```
 
 也可将标签替换为完整 commit SHA。这里的 `1.0.0` 是插件版本，不是 DSH 版本；插件目前仅声明兼容 DSH `0.2.2-rc.3`。
@@ -138,16 +138,15 @@ npm pack --dry-run
 
 已验证：真实 Desktop 页面列举与读取、隔离嵌入文档的 `srcdoc` 提取、可还原 DOM 操作、Promise 结果，以及六项自动测试。插件管理页图标与明暗主题尚未做视觉验收。
 
-## 上传到 GitHub
+## 发布到 GitHub
 
-先在 GitHub 创建名为 `dsh-webmate` 的空仓库，然后在本仓库目录运行：
+本仓库使用 `https://github.com/jozhn/dsh-webmate.git` 作为 `origin`。本地提交后推送：
 
 ```sh
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/dsh-webmate.git
 git push -u origin main
 ```
 
-上传前将 README 中的 `YOUR_GITHUB_USERNAME` 替换为真实所有者。发布标签可使用：
+发布版本标签可使用：
 
 ```sh
 git tag v1.0.0
