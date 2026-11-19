@@ -4,7 +4,7 @@ DSH Desktop 网页读取与操作插件，包名 `dsh-webmate`。直接使用右
 
 ## 安装
 
-需要 **DSH Desktop 0.2.2-rc.3** 和 Git。首次打开 Desktop 完成初始化后，完全退出应用（包括托盘），运行：
+需要 **DSH Desktop 0.2.2-rc.3 或更高版本** 和 Git。首次打开 Desktop 完成初始化后，完全退出应用（包括托盘），运行：
 
 ```sh
 dsh plugin --profile desktop add "github:jozhn/dsh-webmate#main"
